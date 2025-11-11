@@ -6,7 +6,7 @@ This project demonstrates **data preprocessing, model training, and web deployme
 
 ---
 
-## 🚀 Features
+## Features
 
 - Trained **Random Forest Regressor** using `scikit-learn`
 - Preprocessing with `Pipeline` and `ColumnTransformer`
@@ -148,8 +148,8 @@ Then open your browser and visit:
 **Dilkhush Kumar**
 🎓 B.Tech in Computer Science and Engineering (CSE)
 💼 Aspiring Data Scientist & ML Engineer
-📧 [[YourEmail@example.com](mailto:dilkhush4kr@gmail.com)]
-🌐 [Your GitHub Profile](https://github.com/Dilkhushkumarcse)
+📧 [[Email](mailto:dilkhush4kr@gmail.com)]
+🌐 [GitHub Profile](https://github.com/Dilkhushkumarcse)
 
 ---
 
