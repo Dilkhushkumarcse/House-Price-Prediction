@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>California Housing Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            background-color: #fff;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        input, select {
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            width: 100%;
+        }
+        button {
+            grid-column: span 2;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🏡 California House Price Prediction</h2>
+    <form method="post" action="/predict">
+        <input type="number" name="longitude" step="any" placeholder="Longitude" required>
+        <input type="number" name="latitude" step="any" placeholder="Latitude" required>
+        <input type="number" name="housing_median_age" step="any" placeholder="Median Age" required>
+        <input type="number" name="total_rooms" step="any" placeholder="Total Rooms" required>
+        <input type="number" name="total_bedrooms" step="any" placeholder="Total Bedrooms" required>
+        <input type="number" name="population" step="any" placeholder="Population" required>
+        <input type="number" name="households" step="any" placeholder="Households" required>
+        <input type="number" name="median_income" step="any" placeholder="Median Income" required>
+
+        <select name="ocean_proximity" required>
+            <option value="">Select Ocean Proximity</option>
+            <option value="NEAR BAY">NEAR BAY</option>
+            <option value="INLAND">INLAND</option>
+            <option value="NEAR OCEAN">NEAR OCEAN</option>
+            <option value="ISLAND">ISLAND</option>
+            <option value="&lt;1H OCEAN">&lt;1H OCEAN</option>
+        </select>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+</div>
+</body>
+</html>
