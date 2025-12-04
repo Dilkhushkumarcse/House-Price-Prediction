@@ -1,163 +1,165 @@
-```markdown
-# 🏡 California House Price Prediction (Flask + Machine Learning)
+## 🏡 California House Price Prediction — Flask + Machine Learning
 
-A **Machine Learning + Flask web application** that predicts California housing prices based on various features such as location, median income, and housing statistics.  
-This project demonstrates **data preprocessing, model training, and web deployment** — perfect for showcasing end-to-end Data Science & Full Stack ML skills.
-
----
-
-## Features
-
-- Trained **Random Forest Regressor** using `scikit-learn`
-- Preprocessing with `Pipeline` and `ColumnTransformer`
-- **Flask web app** for real-time predictions
-- User input via interactive HTML form
-- Model and preprocessing pipeline stored using `joblib`
-- Evaluation metrics like RMSE and R² (internally logged)
-- Organized project structure ready for deployment (Render / HuggingFace / etc.)
+A **Flask-based Machine Learning web application** that predicts the **median house value** in California based on various housing and demographic factors.
+This project demonstrates an end-to-end ML workflow: **data preprocessing, model training, pipeline integration, and web deployment.**
 
 ---
 
-## Project Structure
+### 🚀 Features
+
+* 🧠 **Random Forest Regression Model** for accurate price prediction
+* 🧹 **Preprocessing pipeline** with `ColumnTransformer` and `OneHotEncoder`
+* 🌐 **Flask web app** with user-friendly input form
+* 💾 Model and pipeline saved using **Joblib**
+* 🧮 Input validation with clean exception handling
+* 🖥️ Easy to deploy on **Render / Hugging Face / Localhost**
+
+---
+
+### 📂 Project Structure
 
 ```
-
-house_price_prediction/
+California-House-Price-Prediction/
 │
-├── app.py                    # Flask web application
-├── model.pkl                 # Trained Random Forest model (ignored in Git)
-├── pipeline.pkl              # Data preprocessing pipeline (ignored in Git)
-├── housing.csv               # Original dataset (California Housing)
-├── input.csv                 # Test input for prediction
+├── app.py                  # Flask web application
+├── model.pkl               # Trained Random Forest model
+├── pipeline.pkl            # Data preprocessing pipeline
+├── housing.csv             # Original dataset
 ├── templates/
-│   └── index.html            # Frontend HTML form
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
-
-````
-
----
-
-## ⚙️ Tech Stack
-
-| Component | Technology |
-|------------|-------------|
-| **Frontend** | HTML, CSS |
-| **Backend** | Flask |
-| **Machine Learning** | Scikit-learn, Pandas, NumPy |
-| **Model** | Random Forest Regressor |
-| **Pipeline** | ColumnTransformer + StandardScaler + OneHotEncoder |
-| **Deployment** | Localhost (can be deployed to Render / HuggingFace) |
+│   └── index.html          # Web interface (HTML form + prediction result)
+├── requirements.txt        # Project dependencies
+└── README.md               # Documentation
+```
 
 ---
 
-## Dataset
+### ⚙️ Tech Stack
 
-Used the **California Housing Dataset**, which contains data from the 1990 U.S. Census.
-
-**Features:**
-- `longitude`, `latitude`
-- `housing_median_age`
-- `total_rooms`, `total_bedrooms`
-- `population`, `households`
-- `median_income`
-- `ocean_proximity` *(categorical)*
-
-**Target:**
-- `median_house_value` (in USD)
+| Category                 | Technology                          |
+| ------------------------ | ----------------------------------- |
+| **Programming Language** | Python                              |
+| **Framework**            | Flask                               |
+| **Libraries**            | Pandas, NumPy, Scikit-learn, Joblib |
+| **Frontend**             | HTML, Bootstrap                     |
+| **Version Control**      | Git, GitHub                         |
+| **Tools**                | VS Code, Jupyter Notebook           |
 
 ---
 
-## Model Training
+### 🧮 Dataset Description
 
-The model is trained using a **RandomForestRegressor** after applying:
-- Median imputation for missing values  
-- Feature scaling (`StandardScaler`)  
-- One-hot encoding for categorical variables  
+Dataset used: **California Housing Dataset** (available via `sklearn.datasets.fetch_california_housing()` or CSV file).
+**Features include:**
 
-Training pipeline (`pipeline.pkl`) and model (`model.pkl`) are saved using `joblib`.
+| Feature            | Description                                  |
+| ------------------ | -------------------------------------------- |
+| longitude          | Geographic coordinate                        |
+| latitude           | Geographic coordinate                        |
+| housing_median_age | Median age of houses in the district         |
+| total_rooms        | Total number of rooms per block              |
+| total_bedrooms     | Total number of bedrooms per block           |
+| population         | Population of the district                   |
+| households         | Number of households                         |
+| median_income      | Median income of households                  |
+| ocean_proximity    | Categorical feature (INLAND, NEAR BAY, etc.) |
+| median_house_value | Target variable (in USD)                     |
 
 ---
 
-## How to Run Locally
+### 🧠 Model Training Overview
 
-### 1️⃣ Clone this repository
+1. Loaded dataset and handled missing values
+2. Used **StratifiedShuffleSplit** for splitting data
+3. Built a preprocessing pipeline with:
+
+   * `SimpleImputer` (median strategy)
+   * `StandardScaler` (for numeric)
+   * `OneHotEncoder` (for categorical)
+4. Trained a **RandomForestRegressor** model
+5. Saved both model and pipeline using `joblib.dump()`
+
+---
+
+### 💻 How to Run the Project
+
+#### 1️⃣ Clone the Repository
+
 ```bash
-git clone https://github.com/Dilkhushkumarcse/House-Price-Prediction.git
-cd House-Price-Prediction
-````
+git clone https://github.com/Dilkhushkumarcse/California-House-Price-Prediction.git
+cd California-House-Price-Prediction
+```
 
-### 2️⃣ Create a virtual environment
+#### 2️⃣ Create and Activate Virtual Environment
 
 ```bash
 python -m venv venv
-venv\Scripts\activate      # For Windows
-# source venv/bin/activate  # For macOS/Linux
+venv\Scripts\activate   # (Windows)
+# source venv/bin/activate   # (Mac/Linux)
 ```
 
-### 3️⃣ Install dependencies
+#### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Run the Flask app
+#### 4️⃣ Run the Application
 
 ```bash
 python app.py
 ```
 
-Then open your browser and visit:
-👉 **[http://127.0.0.1:5000/](http://127.0.0.1:5000/)**
+#### 5️⃣ Open in Browser
+
+👉 [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## Example Input (in Web Form)
+### 🌐 Web Form Input Example
 
-| Feature            | Example Value |
-| ------------------ | ------------- |
-| Longitude          | -122.23       |
-| Latitude           | 37.88         |
-| Housing Median Age | 41            |
-| Total Rooms        | 880           |
-| Total Bedrooms     | 129           |
-| Population         | 322           |
-| Households         | 126           |
-| Median Income      | 8.3252        |
-| Ocean Proximity    | NEAR BAY      |
-
----
-
-## Sample Output
-
-> 🏠 **Predicted Median House Value:** $356,789.42
+| Field              | Example  |
+| ------------------ | -------- |
+| Longitude          | -122.23  |
+| Latitude           | 37.88    |
+| Housing Median Age | 41       |
+| Total Rooms        | 880      |
+| Total Bedrooms     | 129      |
+| Population         | 322      |
+| Households         | 126      |
+| Median Income      | 8.3252   |
+| Ocean Proximity    | NEAR BAY |
 
 ---
 
-## 🧾 Future Improvements
+### 📊 Example Output
 
-* Add **Bootstrap UI** for a modern look
-* Integrate **Model Evaluation Metrics** dashboard
-* Deploy live on **Render / Hugging Face Spaces**
-* Add **API endpoint** for JSON-based predictions
+> 🏠 **Predicted Median House Value:** $452,678.90
 
 ---
 
-## 👨‍💻 Author
+### 📦 requirements.txt
+
+```txt
+Flask
+pandas
+numpy
+scikit-learn
+joblib
+```
+
+### 👨‍💻 Author
 
 **Dilkhush Kumar**
-🎓 B.Tech in Computer Science and Engineering (CSE)
-💼 Aspiring Data Scientist & ML Engineer
-📧 [[Email](mailto:dilkhush4kr@gmail.com)]
-🌐 [GitHub Profile](https://github.com/Dilkhushkumarcse)
+🎓 B.Tech in Computer Science and Engineering
+💼 Aspiring Data Scientist / Machine Learning Engineer
+📧 [[dilkhush4kr@gmail.com](mailto:dilkhush4kr@gmail.com)]
+🌐 [GitHub – Dilkhushkumarcse](https://github.com/Dilkhushkumarcse)
+🌐 [Linkdin – Dilkhush kumar](https://www.linkedin.com/in/dilkhush-kumar-b58664273/)
 
 ---
 
-## ⭐ Support
+### ⭐ Support
 
-If you found this project helpful, please consider giving it a ⭐ on [GitHub](https://github.com/Dilkhushkumarcse/House-Price-Prediction)!
-Your support motivates me to build more Data Science and AI projects.
+If you like this project, please **⭐ star the repository** on GitHub — it helps others discover it and motivates me to build more open-source ML projects!
 
-````
-<img width="568" height="481" alt="Screenshot 2025-11-11 135650" src="https://github.com/user-attachments/assets/c743a836-0b31-45db-84a8-24415d792216" />
-
+---
