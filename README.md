@@ -5,18 +5,18 @@ This project demonstrates an end-to-end ML workflow: **data preprocessing, model
 
 ---
 
-### 🚀 Features
+###  Features
 
-* 🧠 **Random Forest Regression Model** for accurate price prediction
-* 🧹 **Preprocessing pipeline** with `ColumnTransformer` and `OneHotEncoder`
-* 🌐 **Flask web app** with user-friendly input form
-* 💾 Model and pipeline saved using **Joblib**
-* 🧮 Input validation with clean exception handling
-* 🖥️ Easy to deploy on **Render / Hugging Face / Localhost**
+* **Random Forest Regression Model** for accurate price prediction
+* **Preprocessing pipeline** with `ColumnTransformer` and `OneHotEncoder`
+* **Flask web app** with user-friendly input form
+* Model and pipeline saved using **Joblib**
+* Input validation with clean exception handling
+* Easy to deploy on **Render / Hugging Face / Localhost**
 
 ---
 
-### 📂 Project Structure
+### Project Structure
 
 ```
 California-House-Price-Prediction/
@@ -33,7 +33,7 @@ California-House-Price-Prediction/
 
 ---
 
-### ⚙️ Tech Stack
+### Tech Stack
 
 | Category                 | Technology                          |
 | ------------------------ | ----------------------------------- |
@@ -46,7 +46,7 @@ California-House-Price-Prediction/
 
 ---
 
-### 🧮 Dataset Description
+### Dataset Description
 
 Dataset used: **California Housing Dataset** (available via `sklearn.datasets.fetch_california_housing()` or CSV file).
 **Features include:**
@@ -66,7 +66,7 @@ Dataset used: **California Housing Dataset** (available via `sklearn.datasets.fe
 
 ---
 
-### 🧠 Model Training Overview
+### Model Training Overview
 
 1. Loaded dataset and handled missing values
 2. Used **StratifiedShuffleSplit** for splitting data
@@ -80,7 +80,7 @@ Dataset used: **California Housing Dataset** (available via `sklearn.datasets.fe
 
 ---
 
-### 💻 How to Run the Project
+### How to Run the Project
 
 #### 1️⃣ Clone the Repository
 
@@ -115,7 +115,7 @@ python app.py
 
 ---
 
-### 🌐 Web Form Input Example
+### Web Form Input Example
 
 | Field              | Example  |
 | ------------------ | -------- |
@@ -131,13 +131,13 @@ python app.py
 
 ---
 
-### 📊 Example Output
+### Example Output
 
 > 🏠 **Predicted Median House Value:** $452,678.90
 
 ---
 
-### 📦 requirements.txt
+### requirements.txt
 
 ```txt
 Flask
@@ -150,15 +150,15 @@ joblib
 ### 👨‍💻 Author
 
 **Dilkhush Kumar**
-🎓 B.Tech in Computer Science and Engineering
-💼 Aspiring Data Scientist / Machine Learning Engineer
-📧 [[dilkhush4kr@gmail.com](mailto:dilkhush4kr@gmail.com)]
-🌐 [GitHub – Dilkhushkumarcse](https://github.com/Dilkhushkumarcse)
-🌐 [Linkdin – Dilkhush kumar](https://www.linkedin.com/in/dilkhush-kumar-b58664273/)
+- B.Tech in Computer Science and Engineering
+- Aspiring Data Scientist / Machine Learning Engineer
+- [[dilkhush4kr@gmail.com](mailto:dilkhush4kr@gmail.com)]
+- [GitHub – Dilkhushkumarcse](https://github.com/Dilkhushkumarcse)
+- [Linkdin – Dilkhush kumar](https://www.linkedin.com/in/dilkhush-kumar-b58664273/)
 
 ---
 
-### ⭐ Support
+### Support
 
 If you like this project, please **⭐ star the repository** on GitHub — it helps others discover it and motivates me to build more open-source ML projects!
 
