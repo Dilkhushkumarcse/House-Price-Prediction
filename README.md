@@ -146,20 +146,3 @@ numpy
 scikit-learn
 joblib
 ```
-
-### 👨‍💻 Author
-
-**Dilkhush Kumar**
-- B.Tech in Computer Science and Engineering
-- Aspiring Data Scientist / Machine Learning Engineer
-- [[dilkhush4kr@gmail.com](mailto:dilkhush4kr@gmail.com)]
-- [GitHub – Dilkhushkumarcse](https://github.com/Dilkhushkumarcse)
-- [Linkdin – Dilkhush kumar](https://www.linkedin.com/in/dilkhush-kumar-b58664273/)
-
----
-
-### Support
-
-If you like this project, please **⭐ star the repository** on GitHub — it helps others discover it and motivates me to build more open-source ML projects!
-
----
